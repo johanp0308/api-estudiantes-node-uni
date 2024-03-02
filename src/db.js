@@ -1,11 +1,10 @@
-import mysql from 'mysql2';
+import { createPool } from 'mysql2/promise'
 
-// Configurar la conexión a la base de datos
-const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'pajar_google24',
-  database: 'estudiantes',
-});
+const pool = createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'pajar_google24',
+    database: 'estudiantes_db'
+})
 
-export default pool;
+export { pool }
