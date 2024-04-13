@@ -8,7 +8,6 @@ export const obtnerTodosEstudiantes = async (req,res)=>{
         let datos = resultado[0];
 
         if(datos.length > 0){
-            console.log(datos);
             return res.status(200).json(datos);
         }else{
             return res.status(204).json();

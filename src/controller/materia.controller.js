@@ -1,10 +1,10 @@
-import {poo} from '../db.js';
+import {pool} from '../db.js';
 
 
 export const obtenerTodosMaterias = async (req,res) =>{
     try {
         let query = "SELECT * FROM materia;";
-        let resBD = await poo.query(query,[]);
+        let resBD = await pool.query(query,[]);
         let datos = resBD[0];
 
         if(datos.length > 0){
@@ -24,7 +24,7 @@ export const obtenerMateriasById = async (req,res) =>{
     try {
         let idMateria = req.params.id
         let statemet = "SELECT FROMSELECT * FROM materia WHERE materiaId=?;"
-        let resultado = await poo.query(statemet,[idMateria])
+        let resultado = await pool.query(statemet,[idMateria])
         let datos = resultado[0]
 
         if(datos.length > 0){
